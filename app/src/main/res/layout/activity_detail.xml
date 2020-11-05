@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimarySurface"
+    android:paddingHorizontal="16dp"
+    tools:context=".DetailActivity">
+
+    <ImageView
+        android:id="@+id/detail_image_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/ic_basketball" />
+
+    <TextView
+        android:id="@+id/detail_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textColor="?attr/colorSecondary"
+        app:layout_constraintStart_toEndOf="@id/detail_image_view"
+        app:layout_constraintTop_toTopOf="@id/detail_image_view"
+        tools:text="Basketball" />
+
+    <TextView
+        android:id="@+id/detail_subtitle_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:textColor="?attr/colorSecondary"
+        app:layout_constraintBottom_toBottomOf="@id/detail_image_view"
+        app:layout_constraintStart_toEndOf="@id/detail_image_view"
+        app:layout_constraintTop_toBottomOf="@id/detail_title_text"
+        tools:text="1891" />
+
+    <TextView
+        android:id="@+id/about_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:alpha="0.6"
+        android:text="@string/about_sport"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_image_view" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/about_label">
+
+        <TextView
+            android:id="@+id/detail_about_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+            android:text="@string/about_basketball"
+            android:textAppearance="?attr/textAppearanceHeadline5" />
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

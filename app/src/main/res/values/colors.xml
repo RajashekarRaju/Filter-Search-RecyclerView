@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_200">#448AFF</color>
+    <color name="amber_500">#FF9800</color>
+    <color name="blue_dark_primary">#141A20</color>
+    <color name="blue_light_variant">#1D262E</color>
+</resources>
