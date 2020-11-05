@@ -2,7 +2,6 @@
 
     <style name="Base.AppTheme" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/blue_200</item>
-        <item name="colorSecondary">@color/amber_500</item>
         <item name="colorSurface">@color/blue_dark_primary</item>
         <item name="colorPrimaryVariant">@color/blue_light_variant</item>
     </style>

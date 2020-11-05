@@ -14,15 +14,15 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 import kotlin.collections.ArrayList
 
-class MainActivity : AppCompatActivity(), SearchAdapter.SportsAdapterListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchAdapter: SearchAdapter
     private lateinit var editText: AppCompatEditText
     private lateinit var noSearchResultsFoundText: TextView
-    private lateinit var sportsList: List<Sports>
     private lateinit var clearQueryImageView: ImageView
     private lateinit var voiceSearchImageView: ImageView
+    private val sportsList: List<Sports> = sportsList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity(), SearchAdapter.SportsAdapterListener {
         clearQueryImageView = findViewById(R.id.clear_search_query)
         voiceSearchImageView = findViewById(R.id.voice_search_query)
 
-        sportsList = sportsList(applicationContext)
         attachAdapter(sportsList)
 
         editText.doOnTextChanged { text, _, _, _ ->
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity(), SearchAdapter.SportsAdapterListener {
     }
 
     private fun attachAdapter(list: List<Sports>) {
-        searchAdapter = SearchAdapter(list, this)
+        searchAdapter = SearchAdapter(list)
         recyclerView.adapter = searchAdapter
     }
 
@@ -113,12 +112,6 @@ class MainActivity : AppCompatActivity(), SearchAdapter.SportsAdapterListener {
             clearQueryImageView.visibility = View.INVISIBLE
             voiceSearchImageView.visibility = View.VISIBLE
         }
-    }
-
-    override fun onSportSelected(sports: Sports?) {
-        val intent = Intent(applicationContext, DetailActivity::class.java)
-        intent.putExtra("DETAIL_SPORTS_DATA", sports)
-        startActivity(intent)
     }
 
     companion object {
